@@ -1,5 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+
+const links = [
+  { path: "/", linkName: "Home" },
+  { path: "/about", linkName: "About" }
+];
 
 class Layout extends React.Component {
   render() {
@@ -7,14 +12,7 @@ class Layout extends React.Component {
       <>
         <div className="headder">
           Headder
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
+          <Navbar links={links} />
         </div>
         <div className="content">{this.props.children}</div>
         <div className={"footer"}> Footer </div>
